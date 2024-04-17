@@ -1,8 +1,9 @@
-function add(num) {
-  console.log(arguments)
-  console.log(num)
-
-  return num * num
+function add(name) {
+  this.name = name;
+  this.greet = function() {
+    console.log("hi " + this.name)
+  }
 }
 
-console.log(add(2))
+const person = new add("길동");
+person.greet();
